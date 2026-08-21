@@ -92,14 +92,18 @@ curl -X POST http://localhost:3000/api/projects \
   -d '{"name":"My First Project","description":"Testing the API"}'
 ```
 
-## Deployment
-Deploy free on [Railway](https://railway.app) or [Render](https://render.com):
-1. Push this repo to GitHub
-2. Connect the repo on Railway/Render
+## Status
+Currently runs locally (tested end-to-end: signup, login, project creation, task creation, and auth middleware rejecting invalid tokens). Live deployment is planned as a next step — see Deployment notes below.
+
+## Deployment (planned)
+This can be deployed on any Node-friendly host (Render, Railway, Koyeb, etc.) that supports environment variables and a PostgreSQL connection string:
+1. Push this repo to GitHub (done)
+2. Connect the repo to a hosting platform
 3. Add the same environment variables (`DATABASE_URL`, `JWT_SECRET`)
-4. Deploy — it will run `npm start`
+4. Set build command `npm install` and start command `npm start`
 
 ## Future improvements
+- Live deployment
 - Input validation (Zod)
 - Automated tests (Jest + Supertest)
 - Pagination on list endpoints
